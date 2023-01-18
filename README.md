@@ -3,6 +3,7 @@
 1. Give examples of different integration protocols you have come across and give example scripts in python 3 on how to achieve each one.
 
 Integration protocols are a set of guidelines and standards that are used to facilitate communication and data transfer between different systems and applications. I will provide examples and explanations of some of the integration protocols I have come across as well sample scripts for achieving each one.
+
 a)	Representational State Transfer (REST)
 REST is a style for building web services that use HTTP requests to POST(create), PUT(update), GET(read) and DELETE(delete) data. REST is often used to build Application Programming Interfaces that allow applications to communicate with each other over the internet. To use REST, you can utilize the ‘requests’ library to handle the communication.
 
