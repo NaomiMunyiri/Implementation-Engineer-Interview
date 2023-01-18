@@ -28,4 +28,8 @@ def success(request):
     messages.success(request, ("Successful Login"))
     return render(request,'success.html')
 
+@login_required
+def expos(request):
+    return render(request,'list.html')
+
 

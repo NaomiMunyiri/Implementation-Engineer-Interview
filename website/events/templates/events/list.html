@@ -4,23 +4,46 @@
 
     <h1>List of Expos</h1>
     <br/>
-    {% for expo in expo_list %}
-    <div class="card text-center">
-        <div class="card-header">
-          {{ expo }}
-        </div>
+    <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ expo.venue }}</h5>
             <p class="card-text">
-           
-                <strong>Date: {{ expo.event_date }}</strong><br/>
-                <strong>Description: {{ expo.description }}</strong>
-          
-
+              <table id="data" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Expo Name</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for expo in expo_list %}
+                <tr>
+                  <td>{{ expo.name }}</td>
+                  <td>{{ expo.event_date }}</td>
+                  <td>{{ expo.venue }}</td>
+                  <td>{{ expo.description }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>                    
             </p>
         </div>
       </div>
-<br/><br/>
-{% endfor%}
 
 {% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        columns: [
+          {orderable: false, searchable: true},
+          {orderable: true, searchable: false},
+          {orderable: false, searchable: true},
+          {orderable: false, searchable: false}],
+      });
+    });
+</script>
+{% endblock %}
+
