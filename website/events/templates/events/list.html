@@ -1,0 +1,26 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+    <h1>List of Expos</h1>
+    <br/>
+    {% for expo in expo_list %}
+    <div class="card text-center">
+        <div class="card-header">
+          {{ expo }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ expo.venue }}</h5>
+            <p class="card-text">
+           
+                <strong>Date: {{ expo.event_date }}</strong><br/>
+                <strong>Description: {{ expo.description }}</strong>
+          
+
+            </p>
+        </div>
+      </div>
+<br/><br/>
+{% endfor%}
+
+{% endblock %}
